@@ -1,5 +1,18 @@
-
 import random
+from datetime import datetime, time
+
+
+def greetings():
+    time_now = datetime.now().time()
+
+    if time_now > time(18, 00):
+      print('Good evining\n')
+
+    elif time_now < time(12, 00):
+      print('Good morning\n')
+
+    else:
+      print('Good afternoon\n')
 
 
 def get_random():
@@ -11,6 +24,7 @@ def play_game():
     game_counter = 1
     game_chances = 5
 
+    greetings()
     n = get_random()
 
     print(f"THIS IS A GUESSING GAME------OF 1 - 100------- YOU ONLY HAVE 5 TRIES")
@@ -32,13 +46,13 @@ def play_game():
         if user_input == n and game_counter == 1:
             print('Amazing you got the number on your first try')
             dy = """
-    
+
                         oooooooooo       oooooo
                         oo             oo      oo  
                         oo   ooooo     oo      oo
                         oo      oo     oo      oo
                         oooooooooo       oooooo
-    
+
                         """
             print(dy)
             break
